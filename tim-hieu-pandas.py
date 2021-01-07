@@ -14,3 +14,8 @@ print(dates)
 
 df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
 print(df)
+
+#Đọc dữ liệu từ mạng
+url = r'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_csv.csv'
+df = pd.read_csv(url)
+print(df)
