@@ -12,7 +12,8 @@ class PersonView(object):
 
     #Hàm thông báo kết quả insert
     def ket_qua_insert(self, resultID):
-        if resultID > 0:
+        id = resultID[0]
+        if id > 0:
             print("Insert thanh cong")
         else:
             print("Fail")
