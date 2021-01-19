@@ -23,8 +23,16 @@ def lay_tat_ca_du_lieu_bang_person(connection, metadata, engine):
 
     return ResultSet
 
-#Hàm insert
-
+#Hàm insert - tra ve id vua duoc tao
+def them_person(connection, metadata, engine,
+                name, age):
+    # Lấy đối tượng person từ bảng person trong csdl
+    person = db.Table('person', metadata, autoload=True, autoload_with=engine)
+    # Chèn 1 dòng vào bảng person
+    query = db.insert(person).values(name='Tuan Anh', age='20')
+    ResultProxy = connection.execute(query)
+    # Trả về giá trị id vừa được sinh
+    return ResultProxy.inserted_primary_key
 
 #Hàm update
 
