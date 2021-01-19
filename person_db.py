@@ -29,7 +29,7 @@ def them_person(connection, metadata, engine,
     # Lấy đối tượng person từ bảng person trong csdl
     person = db.Table('person', metadata, autoload=True, autoload_with=engine)
     # Chèn 1 dòng vào bảng person
-    query = db.insert(person).values(name='Tuan Anh', age='20')
+    query = db.insert(person).values(name=name, age=age)
     ResultProxy = connection.execute(query)
     # Trả về giá trị id vừa được sinh
     return ResultProxy.inserted_primary_key

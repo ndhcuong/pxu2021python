@@ -17,6 +17,12 @@ class PersonModel(object):
         return results
 
     #Phương thức insert
+    def them_person(self, name, age):
+        resultID = person_db.them_person(self.connection,
+                                       self.metadata,
+                                       self.engine,
+                                       name, age)
+        return resultID
 
     #Phương thức update
 
