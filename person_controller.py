@@ -13,6 +13,9 @@ class PersonController(object):
         self.view.display_all_person(items)
 
     #Phương thức insert
+    def them_person(self, name, age):
+        resultID = self.model.them_person(name, age)
+        self.view.ket_qua_insert(resultID)
 
     #Phương thức update
 
