@@ -13,7 +13,7 @@ def ket_noi_den_csdl(database_server, username, password, database):
 #Xây dựng hàm lấy tất cả dữ liệu của bảng Person
 def lay_tat_ca_du_lieu_bang_person(connection, metadata, engine):
     # Lấy đối tượng person từ bảng person trong csdl
-    person = db.Table('person', metadata, autoload=True, autoload_with=engine)
+    person = db.Table('sinhvien', metadata, autoload=True, autoload_with=engine)
 
     # Lấy tất cả dữ liệu của bảng person - tương đương câu lênh SELECT * FROM person
     query = db.select([person])
